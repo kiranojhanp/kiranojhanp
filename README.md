@@ -4,6 +4,8 @@
   <a href="https://www.instagram.com/kopticss">Instagram</a>
 </p>
 
+<a href="https://app.daily.dev/kiranojhanp"><img src="https://api.daily.dev/devcards/945f6b6779e44475832d70475912d0a5.png?r=eje" width="400" alt="Kiran Ojha's Dev Card"/></a>
+
 ---
 ✨ I'm a frontend engineer passionate about making the web accessible to everyone and advocating for building open and inclusive developer communities. 
 
