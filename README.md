@@ -1,6 +1,6 @@
 <h3 align="center">👋 Hi there! I'm Kiran Ojha</h3>
 <p align="center">
-  <a href="https://www.kojha.com.np">Website</a> •
+  <a href="https://kiranojhanp.github.io/">Website</a> •
   <a href="https://www.instagram.com/kopticss">Instagram</a>
 </p>
 
