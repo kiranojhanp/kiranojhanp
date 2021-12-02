@@ -15,7 +15,6 @@ I love sharing my knowledge with others, and I plan on doing that through conten
 - 🌱 I’m currently learning NestJS, Rust, Blockchain and Web3.0
 - 📫 How to reach me: [@kopticss](https://www.instagram.com/kopticss)
 - ⚡ Fun fact: I consume guns n roses for breakfast.
-- 💻 My portfolio website: [portfolio](https://kiranojhanp.github.io/portfolio/)
 
 
 <p align="center">
