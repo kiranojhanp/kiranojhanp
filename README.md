@@ -11,7 +11,7 @@ I love sharing my knowledge with others, and I plan on doing that through conten
 
 
 - 😄 My Pronouns: He/Him   
-- 💬 Ask me about: Svelte, React, NextJS, React Native, Mernstack, Jamstack, Building Career In Tech, Content Creation.
+- 💬 Ask me about: Svelte, React, NextJS, React Native, Jamstack
 - 🌱 I’m currently learning Rust, NestJS, Blockchain.
 - 📫 How to reach me: [@kopticss](https://www.instagram.com/kopticss)
 - ⚡ Fun fact: I consume guns n roses for breakfast.
