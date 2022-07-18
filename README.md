@@ -7,12 +7,12 @@
 ---
 ✨ I'm a frontend engineer passionate about making the web accessible to everyone and advocating for building open and inclusive developer communities. 
 
-I love sharing my knowledge with others, and I plan on doing that through content creation on my Blog and Youtube channel. the blog in on the way and will be live very soon. I'm currently working for uk based blockchain startup, autaway inc. When I'm not coding, you can find me geeking about photography or playing my fender stratocaster.
+I love sharing my knowledge with others, and I plan on doing that through content creation on my Blog and Youtube channel. the blog in on the way and will be live very soon. I'm currently working for dzango technology. When I'm not coding, you can find me geeking about photography or playing my fender stratocaster.
 
 
 - 😄 My Pronouns: He/Him   
 - 💬 Ask me about: Svelte, React, NextJS, React Native, Jamstack
-- 🌱 I’m currently learning NestJS, Rust, Blockchain and Web3.0
+- 🌱 I’m currently learning Backend and devops
 - 📫 How to reach me: [@kopticss](https://www.instagram.com/kopticss)
 - ⚡ Fun fact: I consume guns n roses for breakfast.
 
