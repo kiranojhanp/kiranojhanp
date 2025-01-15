@@ -1,7 +1,7 @@
 // Theme toggle functionality
 document.addEventListener('DOMContentLoaded', () => {
     const themeToggle = document.querySelector('.theme-toggle');
-    
+
     // Toggle theme
     themeToggle.addEventListener('click', () => {
         const currentTheme = document.documentElement.getAttribute('data-theme');
@@ -9,5 +9,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
         document.documentElement.setAttribute('data-theme', newTheme);
         localStorage.setItem('theme', newTheme);
+
+        // Set dynamic favicon
+        const favicon = document.querySelector('link[rel="icon"]');
+        favicon.href = '/images/favicon-' + newTheme + '.ico';
     });
 });
