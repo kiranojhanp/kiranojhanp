@@ -7,5 +7,5 @@
 
     // Set dynamic favicon
     const favicon = document.querySelector('link[rel="icon"]');
-    favicon.href = './images/favicon-' + theme + '.ico';
+    favicon.href = '/blog/images/favicon-' + theme + '.ico';
 })();

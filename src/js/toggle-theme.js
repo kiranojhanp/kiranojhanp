@@ -12,6 +12,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Set dynamic favicon
         const favicon = document.querySelector('link[rel="icon"]');
-        favicon.href = './images/favicon-' + newTheme + '.ico';
+        favicon.href = '/blog/images/favicon-' + newTheme + '.ico';
     });
 });
