@@ -23,8 +23,8 @@ The Transformer consists of two main components: an **encoder** and a **decoder*
 
 The encoder is made up of multiple identical layers, each containing two sub-layers:
 
--   Multi-head self-attention mechanism
--   Position-wise fully connected feedforward network
+- Multi-head self-attention mechanism
+- Position-wise fully connected feedforward network
 
 The attention mechanism allows the encoder to focus on different parts of the input sequence at once, processing all tokens simultaneously rather than sequentially.
 
