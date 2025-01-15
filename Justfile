@@ -22,10 +22,15 @@ PUBLIC_INDEX := PUBLIC_DIR + "/index.html"
 SERVER_PORT := "8080"
 
 # Default recipe to run when just is called without arguments
-default: build
+default: install-deps build
+
+# Install global dependencies
+install-deps:
+    @echo "🔧 Checking and installing global dependencies..."
+    npm list -g uglify-js csso-cli html-minifier-terser || npm install -g uglify-js csso-cli html-minifier-terser
 
 # Build the entire blog
-build: clean setup posts index
+build: clean setup posts index minify cleanup
     @echo "✨ Blog built successfully!"
 
 # Clean the public directory
@@ -84,6 +89,35 @@ index:
         --template={{HOME_TEMPLATE}} \
         -o {{PUBLIC_INDEX}}
     rm temp_home.md
+
+
+# Minify CSS, JS, and HTML files
+minify:
+    @echo "🔧 Minifying assets..."
+
+    # Minify CSS
+    @echo "🔧 Minifying CSS..."
+    csso {{PUBLIC_DIR}}/css/style.css --output {{PUBLIC_DIR}}/css/style.min.css
+
+    # Minify JavaScript
+    @echo "🔧 Minifying JavaScript..."
+    uglifyjs {{PUBLIC_DIR}}/js/preload.js --compress --mangle -o {{PUBLIC_DIR}}/js/preload.min.js
+    uglifyjs {{PUBLIC_DIR}}/js/toggle-theme.js --compress --mangle -o {{PUBLIC_DIR}}/js/toggle-theme.min.js
+
+    # Minify HTML
+    @echo "🔧 Minifying HTML..."
+    html-minifier-terser --collapse-whitespace --remove-comments --minify-css true --minify-js true {{PUBLIC_DIR}}/index.html -o {{PUBLIC_DIR}}/index.html
+    for post_dir in {{PUBLIC_DIR}}/posts/*; do \
+        if [ -d "$$post_dir" ]; then \
+            html-minifier-terser --collapse-whitespace --remove-comments --minify-css true --minify-js true "$$post_dir/index.html" -o "$$post_dir/index.html"; \
+        fi; \
+    done
+
+# Cleanup unminified files
+cleanup:
+    @echo "🗑️ Cleaning up unminified files..."
+    find {{PUBLIC_DIR}}/css -type f -name "*.css" ! -name "*.min.css" -exec rm -f {} +
+    find {{PUBLIC_DIR}}/js -type f -name "*.js" ! -name "*.min.js" -exec rm -f {} +
 
 # Serve the blog locally using Python's built-in server
 serve: build
