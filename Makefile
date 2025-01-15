@@ -28,9 +28,11 @@ BUILD_INDEX_SCRIPT = $(SCRIPTS_DIR)/build-index.sh
 NEW_POST_SCRIPT = $(SCRIPTS_DIR)/new-post.sh
 LIST_POSTS_SCRIPT = $(SCRIPTS_DIR)/list-posts.sh
 RSS_SCRIPT = $(SCRIPTS_DIR)/generate-rss.sh
+MINIFY_SCRIPT = $(SCRIPTS_DIR)/minify-assets.sh
+
 
 # Ensure all scripts are executable
-SCRIPTS = $(BUILD_POSTS_SCRIPT) $(BUILD_INDEX_SCRIPT) $(NEW_POST_SCRIPT) $(LIST_POSTS_SCRIPT) $(RSS_SCRIPT)
+SCRIPTS = $(BUILD_POSTS_SCRIPT) $(BUILD_INDEX_SCRIPT) $(NEW_POST_SCRIPT) $(LIST_POSTS_SCRIPT) $(RSS_SCRIPT) $(MINIFY_SCRIPT)
 
 .PHONY: default install-deps build clean setup posts index rss minify cleanup serve new-post list help
 
@@ -83,20 +85,10 @@ rss: $(RSS_SCRIPT)
 	./$(RSS_SCRIPT)
 
 # Minify CSS, JS, and HTML files
-minify:
-	@echo "🔧 Minifying assets..."
-	@echo "🔧 Minifying CSS..."
-	csso $(PUBLIC_DIR)/css/style.css --output $(PUBLIC_DIR)/css/style.min.css
-	@echo "🔧 Minifying JavaScript..."
-	uglifyjs $(PUBLIC_DIR)/js/preload.js --compress --mangle -o $(PUBLIC_DIR)/js/preload.min.js
-	uglifyjs $(PUBLIC_DIR)/js/toggle-theme.js --compress --mangle -o $(PUBLIC_DIR)/js/toggle-theme.min.js
-	@echo "🔧 Minifying HTML..."
-	html-minifier-terser --collapse-whitespace --remove-comments --minify-css true --minify-js true $(PUBLIC_DIR)/index.html -o $(PUBLIC_DIR)/index.html
-	@for post_dir in $(PUBLIC_DIR)/posts/*; do \
-		if [ -d "$$post_dir" ]; then \
-			html-minifier-terser --collapse-whitespace --remove-comments --minify-css true --minify-js true "$$post_dir/index.html" -o "$$post_dir/index.html"; \
-		fi; \
-	done
+minify: $(MINIFY_SCRIPT)
+	@echo "🔧 Starting asset minification..."
+	PUBLIC_DIR="$(PUBLIC_DIR)" \
+	./$(MINIFY_SCRIPT)
 
 # Cleanup unminified files
 cleanup:
