@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,700" type="text/css" />
+  <title>Kiran</title>
+  <script src="/js/preload.js"></script>
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="preload" href="/images/theme.svg" as="image" type="image/svg+xml" />
+</head>
+
+<body class="content">
+  <header>
+    <button aria-label="Toggle theme" class="theme-toggle">
+      <svg class="sun-icon" aria-hidden="true">
+        <use href="/images/theme.svg#icon-sun" />
+      </svg>
+      <svg class="moon-icon" aria-hidden="true">
+        <use href="/images/theme.svg#icon-moon" />
+      </svg>
+    </button>
+  </header>
+  <main>
+    <table class="post-list">
+      <tbody>
+        $for(posts)$
+        <tr>
+          <td>
+            <time class="published" datetime="$posts.date$">$posts.date$</time>
+          </td>
+          <td>
+            <a class="entry-title" href="$posts.url$"> $posts.title$ </a>
+          </td>
+        </tr>
+        $endfor$
+      </tbody>
+    </table>
+  </main>
+  <footer>
+    <a href="./rss.xml">RSS</a>
+  </footer>
+  <script src="/js/toggle-theme.js"></script>
+</body>
+
+</html>
