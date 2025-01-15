@@ -4,6 +4,7 @@ POSTS_DIR := "src/posts"
 CSS_DIR := "src/css"
 JS_DIR := "src/js"
 IMAGES_DIR := "src/images"
+SCRIPTS_DIR := "src/scripts"
 TEMPLATES_DIR := "src/templates"
 
 # Generated directory paths
@@ -30,7 +31,7 @@ install-deps:
     npm list -g uglify-js csso-cli html-minifier-terser || npm install -g uglify-js csso-cli html-minifier-terser
 
 # Build the entire blog
-build: clean setup posts index minify cleanup
+build: clean setup posts index rss minify cleanup
     @echo "✨ Blog built successfully!"
 
 # Clean the public directory
@@ -104,6 +105,13 @@ index:
         --template={{HOME_TEMPLATE}} \
         -o {{PUBLIC_INDEX}}
     rm temp_home.md
+
+# Generate a rss feed
+rss:
+    @echo '📰 Generating RSS feed...'
+    bash {{SCRIPTS_DIR}}/generate_rss.sh
+
+
 
 # Minify CSS, JS, and HTML files
 minify:
