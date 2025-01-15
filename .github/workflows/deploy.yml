@@ -31,8 +31,8 @@ jobs:
           npm install -g csso-cli
           npm install -g html-minifier-terser
 
-      - name: Setup Pandoc
-        uses: docker://pandoc/core:3.5
+      - name: Setup pandoc
+        uses: pandoc/actions/setup@v1
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
