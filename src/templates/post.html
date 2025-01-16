@@ -7,6 +7,9 @@
   <meta name="description" content="Kiran's Blog" />
   <title>$title$</title>
 
+  <!-- Prevent theme flash with preload script -->
+  <script src="/js/preload.min.js"></script>
+
   <!-- Preload critical assets -->
   <link rel="preload" href="/css/style.min.css" as="style" />
   <link rel="preload" href="/js/theme-manager.min.js" as="script" />
@@ -23,16 +26,12 @@
 
   <!-- Base styles -->
   <link rel="stylesheet" href="/css/style.min.css" />
-
-  <!-- Defer non-critical JavaScript -->
-  <script defer src="/js/theme-manager.min.js"></script>
-  <script defer src="/js/preload.min.js"></script>
 </head>
 
 <body class="content">
   <header>
     <nav>
-      <a href="">Home</a>
+      <a href="/">Home</a>
     </nav>
     <button aria-label="Toggle dark mode" class="theme-toggle">
       <svg class="sun-icon" aria-hidden="true">
@@ -55,6 +54,7 @@
   </footer>
 
   <!-- Load non-critical scripts at the end -->
+  <script defer src="/js/theme-manager.min.js"></script>
   <script defer src="/js/audio-service.min.js"></script>
   <script defer src="/js/main.min.js"></script>
 </body>
