@@ -8,9 +8,9 @@
   <title>Kiran</title>
 
   <!-- Preload critical assets -->
-  <link rel="preload" href="/blog/css/style.min.css" as="style" />
-  <link rel="preload" href="/blog/js/theme-manager.min.js" as="script" />
-  <link rel="preload" href="/blog/images/theme.svg" as="image" type="image/svg+xml" />
+  <link rel="preload" href="/css/style.min.css" as="style" />
+  <link rel="preload" href="/js/theme-manager.min.js" as="script" />
+  <link rel="preload" href="/images/theme.svg" as="image" type="image/svg+xml" />
 
   <!-- Optimized Google Fonts loading -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -19,24 +19,24 @@
     onload="this.media='all'" />
 
   <!-- Favicon -->
-  <link rel="icon" href="/blog/images/favicon-light.ico" />
+  <link rel="icon" href="/images/favicon-light.ico" />
 
   <!-- Base styles -->
-  <link rel="stylesheet" href="/blog/css/style.min.css" />
+  <link rel="stylesheet" href="/css/style.min.css" />
 
   <!-- Defer non-critical JavaScript -->
-  <script defer src="/blog/js/theme-manager.min.js"></script>
-  <script defer src="/blog/js/preload.min.js"></script>
+  <script defer src="/js/theme-manager.min.js"></script>
+  <script defer src="/js/preload.min.js"></script>
 </head>
 
 <body class="content">
   <header>
     <button aria-label="Toggle theme" class="theme-toggle">
       <svg class="sun-icon" aria-hidden="true">
-        <use href="/blog/images/theme.svg#icon-sun" />
+        <use href="/images/theme.svg#icon-sun" />
       </svg>
       <svg class="moon-icon" aria-hidden="true">
-        <use href="/blog/images/theme.svg#icon-moon" />
+        <use href="/images/theme.svg#icon-moon" />
       </svg>
     </button>
   </header>
@@ -49,7 +49,7 @@
             <time class="published" datetime="$posts.date$">$posts.date$</time>
           </td>
           <td>
-            <a class="entry-title" href="/blog/$posts.url$">$posts.title$ </a>
+            <a class="entry-title" href="/$posts.url$">$posts.title$ </a>
           </td>
         </tr>
         $endfor$
@@ -57,12 +57,12 @@
     </table>
   </main>
   <footer>
-    <a href="/blog/rss.xml">RSS</a>
+    <a href="/rss.xml">RSS</a>
   </footer>
 
   <!-- Load non-critical scripts at the end -->
-  <script defer src="/blog/js/audio-service.min.js"></script>
-  <script defer src="/blog/js/main.min.js"></script>
+  <script defer src="/js/audio-service.min.js"></script>
+  <script defer src="/js/main.min.js"></script>
 </body>
 
 </html>

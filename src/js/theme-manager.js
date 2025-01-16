@@ -25,7 +25,7 @@ class ThemeManager {
 
         const favicon = document.querySelector('link[rel="icon"]');
         if (favicon) {
-            favicon.href = `/blog/images/favicon-${theme}.ico`;
+            favicon.href = `/images/favicon-${theme}.ico`;
         }
     }
 
