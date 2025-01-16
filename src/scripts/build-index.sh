@@ -18,7 +18,7 @@ echo "🏠 Building index page..."
             title_slug=$(basename "$post" .md | sed 's/^[0-9\-]*//')
             date=$(grep -m 1 "date:" "$post" | cut -d' ' -f2)
             title=$(grep -m 1 "title:" "$post" | cut -d':' -f2- | sed 's/^[ ]*//')
-            echo "$date|$title|/blog/posts/$title_slug" >> "$temp_file"
+            echo "$date|$title|/posts/$title_slug" >> "$temp_file"
         fi
     done
 
