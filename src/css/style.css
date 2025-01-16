@@ -9,8 +9,8 @@ body {
 
 :root {
     /* Color palette */
-    --color-primary: #035aa6;
-    --color-primary-hover: #5c73f2;
+    --color-primary: lab(58.739 56.873 -7.396);
+    --color-primary-hover: lab(80.574 30.6 -11.24);
     --color-secondary: #9fbf2e;
     --color-background: #fcfcfc;
     --color-text: #333;
