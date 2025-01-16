@@ -35,8 +35,8 @@ body {
 
 /* Dark mode */
 html[data-theme="dark"] {
-    --color-primary: #5c73f2;
-    --color-primary-hover: #7589ff;
+    --color-primary: lab(58.739 56.873 -7.396);
+    --color-primary-hover: lab(80.574 30.6 -11.24);
     --color-secondary: #b8d44a;
     --color-background: #1a1a1a;
     --color-text: #d9d9d9d1;
